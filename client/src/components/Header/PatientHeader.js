@@ -136,6 +136,7 @@ export default function ProfilePrimarySearchAppBar() {
       <MenuItem onClick={handleLogout}>Logout</MenuItem>
 
     </Menu>
+
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -215,7 +216,6 @@ export default function ProfilePrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

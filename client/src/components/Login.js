@@ -30,24 +30,25 @@ export default function Login() {
       });
       try {
         const user = data.login.user;
-        if(user.doctor === true || user.doctor === 'true' ){
+        if (user.doctor === true || user.doctor === 'true') {
           Auth.setRole('doctor');
           // localStorage.setItem('user_type', 'doctor');
-        }else if(user.patient === true || user.patient === 'true' ){
+        } else if (user.patient === true || user.patient === 'true') {
           // localStorage.setItem('user_type', 'patient');
           Auth.setRole('patient');
-          
+
         }
-        else{
-            // localStorage.setItem('user_type', null);
+        else {
+          // localStorage.setItem('user_type', null);
           Auth.setRole(null);
-        
-        }        
+
+        }
       } catch (error) {
         Auth.setRole(null);
       }
 
       const token = data.login.token;
+      console.log(token);
       Auth.login(token);
 
     } catch (error) {
@@ -56,16 +57,16 @@ export default function Login() {
     }
   };
 
-  return (  
+  return (
     <div>
 
-    <Container component="main" maxWidth="xs">
-       {data ? (
+      <Container component="main" maxWidth="xs">
+        {data ? (
           <p>
             {/* Success! Redirecting{' '} */}
             <Link to="/">Home.</Link>
-          </p>):
-          ( <Box
+          </p>) :
+          (<Box
             sx={{
               marginTop: 8,
               display: "flex",
@@ -123,8 +124,8 @@ export default function Login() {
               </Grid>
             </Box>
           </Box>)}
-    </Container>
-    <Footer />
+      </Container>
+      <Footer />
     </div>
   );
 }

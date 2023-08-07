@@ -25,16 +25,14 @@ export default function ContactDoctor() {
   
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     const {data} = await addMessage({
       variables: {
         messageData:{...formState, patient: Auth.getProfile().data._id }
       },
     });
     console.log(data);
+
   };
-
-
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh" }}>
@@ -105,7 +103,7 @@ export default function ContactDoctor() {
             multiline
             rows={4}
           />
-          <Button variant="contained" type="submit" sx={{ mt: 2 }}>
+          <Button variant="contained" type="submit"  sx={{ mt: 2 }}>
             Submit
           </Button>
         {/* </form> */}

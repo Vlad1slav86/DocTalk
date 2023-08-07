@@ -13,6 +13,7 @@ export const QUERY_ALL_USERS = gql`
     }
   }
 `;
+
 export const QUERY_PROFILE_USER = gql`
   query getUserProfile {
     query getUserProfile {
@@ -29,6 +30,31 @@ export const QUERY_PROFILE_USER = gql`
   }
 `;
 
+
+export const MESSAGES = gql`
+  query Messages {
+    messages {
+      _id
+      email
+      firstName
+      lastName
+      phonenumber
+      patient {
+        _id
+        username
+        email
+        firstName
+        lastName
+        patient
+        username
+        }
+        message
+      }
+    }
+  `;
+
+
+
 export const CHANNEL_DETAILS = gql`
   query ChannelDetailsQuery($channelId: ID!) {
     channel(id: $channelId) {
@@ -41,7 +67,6 @@ export const CHANNEL_DETAILS = gql`
       }
     }
   }
-
 `;
 
 export const GET_EMAILS_QUERY = gql`
@@ -75,6 +100,7 @@ const GET_SENT_EMAILS_QUERY = gql`
         patient
         doctor
       }
+      message
     }
   }
 `;

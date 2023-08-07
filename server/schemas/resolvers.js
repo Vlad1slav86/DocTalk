@@ -60,6 +60,13 @@ const resolvers = {
       }
     },
 
+    messages: async (parent, args, context) => {
+      if (context.user.doctor) {
+        return await Message.find({}).populate('patient');
+      } else {
+        throw new AuthenticationError('You must be a doctor!');
+      }
+    },
 
     getAllEmails: async (parent, { inbox }, context) => {
       try {

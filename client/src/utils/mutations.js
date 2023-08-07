@@ -40,7 +40,9 @@ mutation addMessage($messageData: MessageInput) {
     firstName
     lastName
     phonenumber
-    patient
+    patient {
+      _id
+    }
     message
   }
 }
@@ -98,6 +100,7 @@ export const ADD_CHAT_MESSAGE = gql`
     }
   }
 `;
+
 
 // export const UPDATE_EMAIL_MUTATION = gql`
 //   mutation UpdateEmail($id: ID!, $emailInput: EmailInput!) {
