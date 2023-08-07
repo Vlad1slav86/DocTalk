@@ -26,7 +26,7 @@
   import DoctorProfile from './pages/Doctor/DoctorProfile';
   import { ThemeProvider } from '@mui/material/styles';
   import { theme, lightTheme, darkTheme } from './theme';
-  import Profile from './components/Profile';
+  import Profile from './components/Profile/Profile';
 
 
 

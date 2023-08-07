@@ -12,9 +12,10 @@ import {
 } from "@mui/material";
 import { gql, useQuery } from "@apollo/client";
 import EditProfileForm from "./EditProfileForm";
-import EditProfile from "./EditProfile";
-import AuthService from "../utils/auth";
-
+import EditProfile from "./EditProfile.js";
+import AuthService from "../../utils/auth";
+// Hardcoded profile image URL
+const hardcodedProfileImage = "/path/to/hardcoded/image.jpg";
 export const QUERY_PROFILE_USER = gql`
   query getUserProfile {
     loggedInUser {
