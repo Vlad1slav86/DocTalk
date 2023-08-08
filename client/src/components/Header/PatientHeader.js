@@ -109,6 +109,12 @@ export default function ProfilePrimarySearchAppBar() {
       navigate('/billing');
     }
   };
+  const handleFindDoctorClick = () => {
+    if (isLoggedIn) {
+      navigate('/FindDoctor');
+    }
+  };
+
   
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -128,10 +134,7 @@ export default function ProfilePrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleProfileClick}>Profile</MenuItem>
-
-
-
-      <MenuItem onClick={handleMenuClose}><Link to="/MyAccount">My Account</Link></MenuItem>
+      <MenuItem onClick={handleFindDoctorClick}>Find Doctor</MenuItem>
       <MenuItem onClick={handleBillingClick}>Billing</MenuItem>
       <MenuItem onClick={handleLogout}>Logout</MenuItem>
 
@@ -187,7 +190,7 @@ export default function ProfilePrimarySearchAppBar() {
         <p>Call</p>
       </MenuItem>
 
-      <MenuItem>
+      {/* <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -198,7 +201,7 @@ export default function ProfilePrimarySearchAppBar() {
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem>
+      </MenuItem> */}
 
       <MenuItem>
         <Link to="/PatientProfile" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -220,7 +223,7 @@ export default function ProfilePrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -228,7 +231,7 @@ export default function ProfilePrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
@@ -275,7 +278,7 @@ export default function ProfilePrimarySearchAppBar() {
               </Badge>
             </IconButton>
 
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
@@ -283,7 +286,7 @@ export default function ProfilePrimarySearchAppBar() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
 
             <IconButton
               size="large"

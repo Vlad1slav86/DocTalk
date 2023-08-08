@@ -20,15 +20,14 @@ const theme = createTheme({
       },
     },
     palette: {
-      type: 'light', // Switching the dark mode on is a single property value change.
       primary: {
-        main: '#007bff', 
+        main: '#007BFF',
       },
       secondary: {
-        main: '#abcdd6', 
+        main: '#FF6B6B',
       },
     },
     
   });
 
-export default theme;
+  export { theme };

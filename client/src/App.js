@@ -1,46 +1,32 @@
-import Login from './components/Login';
-import Signup from './components/Signup'; 
-import ContactForm from './components/Contact';
-import React from "react";
-import AppHeader from "./components/Header/AppHeader";
-import AboutUs from "./components/AboutUs";
-import Home from "./components/Home/Home";
-import Services from "./components/Services";
-import Billing from "./components/Billing";
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient,InMemoryCache,ApolloProvider,createHttpLink} from '@apollo/client';
-import ContactDoctor from './pages/Patient/ContactDoc';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './theme';
+import Home from './components/Home/Home';
+import AboutUs from './components/AboutUs';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import ContactForm from './components/Contact';
+import AppHeader from './components/Header/AppHeader';
+import Services from './components/Services';
+import Billing from './components/Billing';
+import ContactDoctor from './pages/Patient/ContactDoc';
 import CallPatient from './pages/Doctor/CallPatient';
-
 import ComposeEmail from './pages/Emails/ComposeEmail';
 import EmailDashboard from './pages/Emails/EmailDashboard';
 import EmailDetails from './pages/Emails/EmailDetails';
 import EmailList from './pages/Emails/EmailList';
-
 import PatientProfile from './pages/Patient/PatientProfile';
 import BookAppointment from './pages/Patient/BookAppointment';
 import Appointments from './pages/Patient/Appointments';
-import MyAccount from './pages/Patient/MyAccount';
-// import FindDoctor from './pages/Patient/FindDoctor';
-import DoctorProfile from './pages/Doctor/DoctorProfile';
-import { ThemeProvider } from '@mui/material/styles';
-import { theme, lightTheme, darkTheme } from './theme';
 import Profile from './components/Profile/Profile';
-
-
-
-// import ContactDoctor from './pages/Patient/ContactDoc';
-// import ContactPatient from './pages/Doctor/ContactPatient';
-// import ContactPatientChat from './pages/Doctor/ContactPatientChat';
-
-
+import ContactPatientChat from './pages/Doctor/ContactPatientChat';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
-
-
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -52,7 +38,6 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -60,10 +45,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
-  
-      <ApolloProvider client={client}>
-    
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
         <Router>
           <AppHeader />
           <Routes>
@@ -81,26 +64,19 @@ function App() {
             <Route path="/emaildetails" element={<EmailDetails />} />
             <Route path="/callpatient" element={<CallPatient />} />
             <Route path="/profile" element={<Profile />} />
-
-
-
-{/*         
-            <Route path="/contactpatientchat" element={<ContactPatientChat />} /> */}
-
+            {/* <Route path="/contactpatientchat" element={<ContactPatientChat />} /> */}
             <Route path="/PatientProfile" element={<PatientProfile />} />
             <Route path="/BookAppointment" element={<BookAppointment />} />
             {/* <Route path="/FindDoctor" element={<FindDoctor />} /> */}
             <Route path="/Appointments" element={<Appointments />} />
-            <Route path="/MyAccount" element={<MyAccount />} />
-
-
-            <Route path="/DoctorProfile" element={<DoctorProfile />} />
+            {/* <Route path="/DoctorProfile" element={<DoctorProfile />} /> */}
+            <Route path="/" element={<ContactPatientChat />} />
 
 
           </Routes>
         </Router>
-      </ApolloProvider>
-    </>
+        </ThemeProvider>
+    </ApolloProvider>
   );
 }
 

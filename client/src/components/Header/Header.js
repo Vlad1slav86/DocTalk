@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Logo section */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            
             <Typography
               variant="h6"
               noWrap
