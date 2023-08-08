@@ -54,7 +54,7 @@ npm run start
 ## Screenshot
 
 Home Page
-![homepage](/images/DocTalk.png)
+![homepage](client/public/images/DocTalk.png)
 
 ## Links
 - Heroku: https://doc-talk-1217027d6c32.herokuapp.com
