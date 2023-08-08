@@ -104,7 +104,7 @@ export default function ProfilePrimarySearchAppBar() {
       navigate('/profile');
     }
   };
-  const handleBillingClick = () => {  
+  const handleBillingClick = () => {
     if (isLoggedIn) {
       navigate('/billing');
     }
@@ -115,7 +115,7 @@ export default function ProfilePrimarySearchAppBar() {
     }
   };
 
-  
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -260,11 +260,14 @@ export default function ProfilePrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <Link to="/email-dashboard"><MailIcon /></Link>
-              </Badge>
-            </IconButton>
+
+            <Link to="/email-dashboard">
+              <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                <Badge badgeContent={4} color="error">
+                  <MailIcon />
+                </Badge>
+              </IconButton>
+            </Link>
 
             <IconButton size="large" aria-label="" color="inherit">
               <Badge>
@@ -272,11 +275,13 @@ export default function ProfilePrimarySearchAppBar() {
               </Badge>
             </IconButton>
 
-            <IconButton size="large" aria-label="" color="inherit">
-              <Badge>
-                <Link to="/contactdoctor"><CallIcon /></Link>
-              </Badge>
-            </IconButton>
+            <Link to="/contactdoctor">
+              <IconButton size="large" aria-label="" color="inherit">
+                <Badge>
+                  <CallIcon />
+                </Badge>
+              </IconButton>
+            </Link>
 
             {/* <IconButton
               size="large"

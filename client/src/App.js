@@ -23,6 +23,7 @@ import BookAppointment from './pages/Patient/BookAppointment';
 import Appointments from './pages/Patient/Appointments';
 import Profile from './components/Profile/Profile';
 import ContactPatientChat from './pages/Doctor/ContactPatientChat';
+import MessagesPatient from './pages/Doctor/MessagesPatient';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -71,7 +72,7 @@ function App() {
             <Route path="/Appointments" element={<Appointments />} />
             {/* <Route path="/DoctorProfile" element={<DoctorProfile />} /> */}
             <Route path="/" element={<ContactPatientChat />} />
-
+            <Route path="/doctor-messages" element={<MessagesPatient />} />
 
           </Routes>
         </Router>
