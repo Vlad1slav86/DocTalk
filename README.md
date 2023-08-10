@@ -81,6 +81,6 @@ For any questions please contact:
 - [Sehrish Khan](https://github.com/sehrishkhan336)
 - [Vlad Mladenov](https://github.com/Vlad1slav86)
 - [Joel Perez](https://github.com/JoelP-11)
-- [Brian Chin](https://github.com/EspadaSworn)
+- [Brandon Chin](https://github.com/EspadaSworn)
 - [Chris Bae](https://github.com/cbae122)
   
